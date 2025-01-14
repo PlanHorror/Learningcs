@@ -3,13 +3,18 @@ using Learningcs.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Learningcs.Data;
-
+// Migration command: dotnet ef migrations add AddCategoryToDb
+// Update database command: dotnet ef database update
+// Install entity framework: dotnet tool install --global dotnet-ef
+// Check database connection: dotnet ef dbcontext info
 public class ApplicationDbContext : DbContext
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
     }
+    // Create new table Categories; { get; set; } is required to create a table and perform CRUD operations
     public DbSet<Learningcs.Models.Category> Categories { get; set; }
+    // Seed data to Categories table
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Category>().HasData(

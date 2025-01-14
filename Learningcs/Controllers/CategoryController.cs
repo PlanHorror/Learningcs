@@ -18,5 +18,12 @@ namespace Learningcs.Controllers
             return View(categories);
         }
 
+        // Create new category
+        // GET: CategoryController/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
     }
 }

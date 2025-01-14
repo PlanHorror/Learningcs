@@ -1,6 +1,15 @@
 ﻿@model List<Category>
-<h2>Category</h2>
-<table class="table table-bordered table-hover">
+<div class="container">
+    <div class="row pt-4 pb-3">
+        <div class="col-6 text-primary">
+            <h2>Category</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-action="Create" class="btn btn-lg btn-primary">Create New</a>
+        </div>
+    </div>
+</div>
+<table class="table table-bordered table-striped">
     <thead>
         <tr>
             <th>Category ID</th>
